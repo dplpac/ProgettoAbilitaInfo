@@ -81,7 +81,26 @@ Si è deciso di simulare questo terremoto specifico poiché presenta delle carat
 Il lavoro svolto è costituito di tre parti: nella prima sono presentate le funzionalità utilizzate dell'applicazione web XeRiS, e riportati i dati geosismologici relativi alla sorgete sismica di Casamicciola. Nella seconda parte sono presentati i risultati della simulazione con sorgente sull'isola, tabulate le faglie appenniniche e presentati i relativi scenari di scuotimento ad Ischia. Nella terza e ultima parte sono confrontati i diversi scenari di scuotimento simulati.
 
 \section{Presentazione della Web App XeRiS}
+
+XeRiS è un'applicazione web (in inglese Web App) (Vaccari, 2016), che permette la valutazione neo-deterministica della pericolosità sismica (Panza et al., 2001, Panza et al., 2012) mediante un'intuitiva interfaccia utente, nascondendo all'utente finale le complessità insite nel motore di calcolo.\\
+Attraverso la simulazione di eventi sismici e il calcolo di scenari di scuotimento realistici, valutati in un singolo sito d'interesse o in un'area attorno all'epicentro, si possono calcolare i parametri di scuotimento del suolo, come ad esempio la Peak Ground Acceleration (PGA), tipicamente adottata per la stima della pericolosità sismica. Ma XeRiS genera anche le serie temporali, in spostamento, velocità ed accelerazione, che possono essere utilizzate dagli ingegneri come input sismico per la progettazione di strutture resistenti al sisma.\\
+Con valutazione neo-deterministica della pericolosità, si intende che per la costruzione degli scenari di scuotimento sismico, si tengono in considerazione il modello della sorgente, le modalità di propagazione del segnale e gli effetti di sito, rispettando le leggi fisiche che descrivono la generazione e la propagazione delle onde sismiche.
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=.5\linewidth]{Img/XerisLogIn.png}
+ \caption{Login XeRiS}
+ \label{fig:Login XeRiS2}
+\end{figure}
+Inizialmente XeRiS richiede la definizione di un modello strutturale stratificato per la porzione di litosfera, nella quale noi collocheremo la faglia, in cui ha origine il processo di rottura e da cui si propagheranno i fronti d'onda del sisma. E' possibile selezionarne uno già implementato oppure utilizzarne di nuovi creati ad hoc.\\
+Successivamente, si modellizza la sorgente sismica attribuendone le caratteristiche geo-sismologiche, nel nostro caso quelle disponibili nel Database of Individual Seismogenic Sources (DISS Working Group, 2018).\\
+Per rappresentare al meglio la fisica del problema, la sorgente sarà considerata estesa, e dunque non trattata come un punto materiale posizionato in corrispondenza dell'ipocentro del terremoto, bensì approssimata ad una superficie rettangolare di dimensioni appropriate (e.g. Wells and Coppersmith, 1994), contenente al suo interno delle sotto-sorgenti che potranno essere considerate puntiformi.\\
+Dopo aver scelto il sito d'interesse, nel caso in esame le coordinate della stazione sismica IOCA di Casamicciola sull'Isola d'Ischia, avrà luogo il calcolo dei segnali sismici che potranno essere utilizzati come input sismico.\\
+In questo modo sarà generata una banca dati per un insieme di terremoti di scenario con caratteristiche tettoniche e ubicazioni geografiche differenti, utile per confrontare gli effetti ad Ischia dei diversi terremoti e quindi anche al fine di valutare quale evento sismico possa determinare una maggior pericolosità.
+\clearpage
+
 \subsection{Definizione del modello strutturale}
+
+
 \subsection{Modellizzazione di sorgenti sismiche estese}
 \subsection{Modellazione del moto del suolo generato da sorgenti sismiche
 estese}
