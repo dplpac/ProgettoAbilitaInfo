@@ -99,7 +99,35 @@ In questo modo sarà generata una banca dati per un insieme di terremoti di scen
 \clearpage
 
 \subsection{Definizione del modello strutturale}
+XeRiS utilizza la teoria della somma modale (Panza, 1985; Florsch et al., 1991) per il calcolo dei sismogrammi sintetici quando la distanza tra il sito d' interesse, cioè dove sarà valutato l'input sismico, e la sorgente del segnale è maggiore della profondità ipocentrale. Ciò accade nella maggior parte dei casi, mentre se tale distanza è minore interviene il metodo numerico DWN (Discrete Wave Number Technique) (Pavlov, 2009). La tecnica modale permette di ottenere dei sismogrammi accurati in maniera molto efficiente dal punto di vista computazionale, prendendo in considerazione anche l'attenuazione anelastica per la propagazione del segnale. Per poter applicare la teoria della somma modale, è necessario definire un modello di semispazio stratificato lateralmente omogeneo (1D), che esprime le caratteristiche medie della porzione di litosfera considerata, di cui XeRiS dovrà calcolare i modi di oscillazione per le onde di Rayleigh (campo P-SV) e di Love (campo SH). Ciascuno strato è caratterizzato dalle seguenti quantità (Fig.2.2): spessore, densità ($\rho$), velocità onde P e S (Vp e Vs) ed i fattori di qualità (inversamente proporzionali all'attenuazione) delle onde Vp e Vs, rispettivamente Qp e Qs. Per convenzione fisica, alla struttura deve essere garantita una profondità di 100 km o 1000 km, per calcoli rispettivamente su scala locale e regionale. XeRiS approssima la porzione litosferica senza prendere in considerazione la curvatura della superficie terrestre.
 
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=.5\linewidth]{Img/ModelloStrutturaleIschia.png}
+ \caption{Sinistra: densità (in verde) e velocità delle onde P ed S (blu, rosso)
+in funzione della profondità. Destra: modello strutturale usato per Ischia.}
+ \label{fig:ModStrIsc}
+\end{figure}
+
+Le onde sismiche di superficie che determinano il moto del suolo sono le onde di Love e di Rayleigh: si tratta di perturbazioni progressive che si propagano sulla superficie terrestre.\\
+Le onde di Love sono caratterizzate da uno sforzo di taglio perpendicolare alla direzione di propagazione del fronte d'onda, mentre le onde di Rayleigh determinano un moto retrogrado ellissoidale del suolo, e decadono rapidamente all'aumentare della profondità (Fig.2.3). In Fig.2.4 sono rappresentati graficamente gli autovalori per i modi di Rayleigh e di Love della struttura ischiam0001 utilizzata per la simulazione con epicentro ad Ischia (De Natale et al., 2018).\\
+Lo stesso modello stratificato viene utilizzato anche con la metodologia DWN, che se da un lato permette di considerare siti posizionati anche sulla verticale del piano di faglia, dall'altro risulta molto più onerosa dal punto di vista computazionale, maggiore è la distanza dall'epicentro e al crescere delle frequenze considerate nella generazione dei sismogrammi sintetici.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=.5\linewidth]{Img/PandSwaves.png}
+ \caption{Rappresentazione grafica delle onde di corpo e di superficie.}
+ \label{fig:PandSwaves}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=.5\linewidth]{Img/IscModes.png}
+ \caption{Rappresentazione grafica degli autovalori per i modi di  Love (a sinistra) e Rayleigh (a
+destra) relativi alla struttura ischiam0001; In alto sono
+riportate le velocità di fase (c), in basso le velocità di gruppo (U).}
+ \label{fig:IscModes}
+\end{figure}
 
 \subsection{Modellizzazione di sorgenti sismiche estese}
 \subsection{Modellazione del moto del suolo generato da sorgenti sismiche
