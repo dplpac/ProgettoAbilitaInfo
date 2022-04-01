@@ -130,6 +130,49 @@ riportate le velocità di fase (c), in basso le velocità di gruppo (U).}
 \end{figure}
 
 \subsection{Modellizzazione di sorgenti sismiche estese}
+
+Modellizzare una sorgente sismica estesa significa definire i suoi parametri geologici, tettonici e sismici che permettono di caratterizzarla: ubicazione, dimensioni ed orientazione del piano di faglia, meccanismo focale e processo cinematico di rottura. Tali fattori, unitamente alle proprietà del modello strutturale attraversato dalla perturbazione sismica, determineranno le caratteristiche del segnale sismico ottenuto al sito di interesse.\\
+I parametri utilizzati nella simulazione dell'evento sismico con sorgente ad Ischia sono riportati in Fig.2.5.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=.5\linewidth]{Img/Paratmeters.png}
+ \caption{Dati specifici della sorgente situata sulla faglia di Casamicciola.}
+ \label{fig:Paratmeters}
+\end{figure}
+
+I parametri che descrivono il meccanismo focale sono:
+\begin{itemize}
+\item  Fault strike: è l'angolo tra il nord magnetico indicato dall'ago della bussola e la linea di direzione della faglia, tale angolo si misura in senso
+orario da 0 a 360 gradi.
+\item  Fault dip: indica l'angolo tra la faglia e il piano orizzontale, da 0 a 90 gradi.
+\item Fault rake: è la direzione del movimento dell' hanging wall durante il fenomeno di rottura, misurato rispetto il piano di faglia. Si misura relativamente al fault strike e assume valori da 0 a 360 gradi.
+\end{itemize}
+%
+Il processo di rottura viene considerato un fenomeno stocastico caratterizzato dal suo punto di nucleazione, dalla velocità di propagazione della frattura e da una specifica mappa di scorrimento della roccia sul piano di faglia (Fig.2.6).\\
+Pertanto ai fini del calcolo del segnale sismico emesso sono prese in considerazione diverse modalità di scorrimento sul piano di faglia, per maggiori dettagli si rimanda il lettore al paragrafo seguente.\\
+All'interno del rettangolo che approssima la faglia (Fig.2.7) si considera un sotto-rettangolo, nel quale è posizionato in modo casuale il punto di nucleazione dal quale ha origine il processo di rottura.\\
+Attorno sono localizzate le sotto-sorgenti puntiformi disposte in modo ordinato su una griglia regolare, rappresentate in Fig.2.6 e in Fig. 2.7 come delle croci, che nel complesso simulano la sorgente estesa, mentre in bianco sono rappresentate le curve isocrone relative alla propagazione del processo di rottura.\\
+Per tenere in considerazione anche un eventuale effetto analogo a quello Doppler in acustica, XeRiS valuta la direttività dei fronti d'onda in funzione del punto di nucleazione casuale, del meccanismo focale e del sito in cui si valutano gli effetti del input sismico.\\
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=.5\linewidth]{Img/SlipMap.png}
+ \caption{Esempio di mappa di un processo di rottura: le diverse tonalità di colore esprimono le percentuali di scorrimento relativo dei blocchi di faglia, rispetto quello massimo rappresentato in nero. In rosso è raffigurato il punto di nucleazione (casuale) e in bianco le curve isocrone della propagazione della rottura.}
+ \label{fig:SlipMap}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=.5\linewidth]{Img/Positions.png}
+ \caption{Posizione relativa del sito in cui è situata la stazione IOCA (io) e le coordinate in cui si trova la faglia. Il rettangolo arancione rappresenta il sotto rettangolo in cui può variare il punto di nucleazione casuale dal quale ha origine la rottura. I puntini blu rappresentano le sottosorgenti.}
+ \label{fig:Positions}
+\end{figure}
+
+
+
+
+
 \subsection{Modellazione del moto del suolo generato da sorgenti sismiche
 estese}
 \subsection{Parametri di scuotimento del suolo}
