@@ -157,25 +157,71 @@ Per tenere in considerazione anche un eventuale effetto analogo a quello Doppler
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[width=.5\linewidth]{Img/SlipMap.png}
+ \includegraphics[width = 150pt, height = 150pt]{Img/SlipMap.png}
  \caption{Esempio di mappa di un processo di rottura: le diverse tonalità di colore esprimono le percentuali di scorrimento relativo dei blocchi di faglia, rispetto quello massimo rappresentato in nero. In rosso è raffigurato il punto di nucleazione (casuale) e in bianco le curve isocrone della propagazione della rottura.}
  \label{fig:SlipMap}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htbp]%da mettere nella stessa page del img precedente
  \centering
- \includegraphics[width=.5\linewidth]{Img/Positions.png}
+ \includegraphics[width = 150pt, height =150pt]{Img/Positions.png}
  \caption{Posizione relativa del sito in cui è situata la stazione IOCA (io) e le coordinate in cui si trova la faglia. Il rettangolo arancione rappresenta il sotto rettangolo in cui può variare il punto di nucleazione casuale dal quale ha origine la rottura. I puntini blu rappresentano le sottosorgenti.}
  \label{fig:Positions}
+\end{figure}
+\clearpage
+
+\subsection{Modellazione del moto del suolo generato da sorgenti sismicheestese}
+Il segnale sismico generato da un modello di sorgente sismica estesa, si ottiene dalla combinazione dei segnali emessi da un insieme di sottosorgenti puntiformi, localizzate nel rettangolo che approssima la faglia.\\
+Per studiare eventi sismici su scala locale, in altre parole per simulazioni in cui tra sorgente e ricevitore intercorre una distanza dell'ordine delle decine di chilometri, è necessario definire il modello strutturale fino a una profondità di un centinaio di chilometri ed è necessario impostare la frequenza di cut off a 10 Hz, poiché sulle brevi distanze il segnale sismico è dominato dalle alte frequenze.\\
+All'aumentare delle distanze i segnali ad alta frequenza diventano sempre meno rilevanti, poiché intervengono fattori che determinano il decadimento della loro ampiezza d'onda.\\
+Tra le principali cause dello smorzamento ci sono:\\
+
+\begin{itemize}
+\item  L'anelasticità del mezzo, che incide maggiormente su segnali ad alta frequenza che compiono più cicli.
+\item Lo sparpagliamento geometrico, il fronte d'onda si amplia dunque le onde sferiche (onde di corpo) e cilindriche (onde di superficie) decadono in ampiezza rispettivamente come 1/r e 1/sqrt(r).
+\end{itemize}
+%
+Per scenari regionali, in cui le distanze sono dell'ordine anche delle centinaia di chilometri, si fissa la frequenza di cut off dell'input sismico a 1 Hz (poiché nel segnale sismico dominano le basse frequenze), infatti sulle lunghe distanze i segnali ad alta frequenza sono, relativamente, molto attenuati e in prima approssimazione il loro contributo può essere trascurato.
+\clearpage
+
+\subsection{Parametri di scuotimento del suolo}
+
+I principali parametri per descrivere lo scuotimento del suolo sono:
+\begin{itemize}
+\item PGA Peak Ground Acceleration: valore del picco di accelerazione orizzontale del suolo, si ottiene dalla somma quadratica sotto radice del picco di accelerazione radiale e trasversale.
+\item PGV Peak Ground Velocity: valore del picco di velocità orizzontale del suolo.
+\item PGD Peak Ground Displacement: valore del picco di spostamento orizzontale del suolo.
+\end{itemize}
+
+Gli effetti della perturbazione sismica sugli edifici sono legati al loro periodo naturale di oscillazione.\\
+Per studiare gli effetti del sisma su eventuali edifici presenti nel sito d'interesse, è possibile, in prima approssimazione, considerarli come dei pendoli unidimensionali rovesciati, con periodi di oscillazione crescenti.\\
+Forzando tale sistema con un segnale sismico, cominceranno ad oscillare in modo differente in base alla frequenza propria di risonanza, determinata unicamente dalla lunghezza del pendolo con cui è approssimato l'edificio, ed in relazione al contenuto in frequenza del segnale sismico forzante.\\
+Il valore in accelerazione massimo che si osserva per ciascun pendolo, prende il nome di accelerazione spettrale, che se graficato in funzione del periodo di oscillazione permette di ottenere il grafico dello spettro di risposta in accelerazione. Quindi è possibile associare a un'azione sismica esterna l'accelerazione massima a cui sono soggetti edifici con frequenze di risonanza diverse.\\
+Data l'imprevedibilità del processo di rottura, ai fini del calcolo del segnale utilizzato come input sismico, sono prese in considerazione diverse modalità di scorrimento sul piano di faglia, quindi calcolato il segnale emesso e tracciato il grafico dello spettro di risposta per ciascuna realizzazione nel sito d'interesse.\\
+Successivamente, XeRiS valuta periodo per periodo il cinquantesimo ed il novantacinquesimo percentile dell'accelerazione spettrale per l'insieme degli spettri di risposta ottenuti e traccia il grafico MCSI per l'unica sorgente considerata.\\
+In questo caso particolare, la zona in grigio presente nel grafico MCSI, rappresenta l'area tra i percentili presi in considerazione.\\
+Nel caso in cui ad un sito si vogliano valutare gli effetti sullo scuotimento del terreno (solitamente nel dominio dell'accelerazione) dovuti a sorgenti sismiche differenti per caratteristiche tettoniche e/o posizione geografica, è possibile considerare in uno stesso grafico MCSI gli spettri di risposta ottenuti per le varie sorgenti, con i relativi percentili.\\
+Realizzando un tale grafico su XeRiS, appariranno in tabella solo le sorgenti che determinano un contributo dominante almeno in un periodo dello spettro.\\
+
+\begin{figure}[htbp]%da mettere nella stessa page del img precedente
+ \centering
+ \includegraphics[width = 150pt, height =150pt]{Img/oscillatori.png}
+ \caption{Costruzione del grafico dello spettro di risposta in accelerazione.}
+ \label{fig:oscillatori}
+\end{figure}
+
+\begin{figure}[htbp]%da mettere nella stessa page del img precedente
+ \centering
+ \includegraphics[width = 150pt, height =150pt]{Img/MCSI.png}
+ \caption{Esempio di grafico MCSI per una singola sorgente, in grigio l'area tra il 50esimo e il 95esimo percentile.}
+ \label{fig:MCSI}
 \end{figure}
 
 
 
 
 
-\subsection{Modellazione del moto del suolo generato da sorgenti sismiche
-estese}
-\subsection{Parametri di scuotimento del suolo}
+
 \subsection{Test parametrici}
 
 \section{Simulazione di eventi di scenario}
