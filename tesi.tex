@@ -217,12 +217,16 @@ Realizzando un tale grafico su XeRiS, appariranno in tabella solo le sorgenti ch
  \label{fig:MCSI}
 \end{figure}
 
-
-
-
-
-
 \subsection{Test parametrici}
+XeRiS offre la possibilità di effettuare dei rapidi test parametrici: questo tipo di studio permette di analizzare come variano i valori di scuotimento del suolo, in funzione della variazione di un parametro libero scelto, caratterizzate la sorgente sismica.\\
+Il test consiste nel fissare i parametri che caratterizzano la sorgente lasciandone variare solamente uno, entro un intervallo predefinito e con un passo scelto a piacere.\\
+Per ogni valore che assume la variabile libera, saranno elaborati dei sismogrammi sintetici, che verranno poi utilizzati come input sismico, per ottenere il grafico dell'accelerazione radiale, trasversale e verticale del moto del suolo in funzione del parametro libero. L'accelerazione radiale e trasversale sono le componenti vettoriali dell'accelerazione orizzontale del moto del suolo.\\
+Occorre specificare che in questa funzionalità di XeRiS, la faglia non è considerata estesa, ma viene approssimata ad una sorgente puntiforme opportunamente scalata nello spazio (SSPS - Size Scaled Point Source) o semi estesa,
+ovvero scalata nello spazio e nel tempo (STSPS - Size and Time Scaled Point Source) (Panza et al., 2012), a discrezione dell'utente.\\
+Per prima cosa è necessario definire il modello strutturale in cui noi posizioneremo la faglia e dove si propagheranno le onde sismiche.\\
+Successivamente, si inseriscono i parametri fissi, si seleziona il parametro libero, si specifica il range di variabilità e lo step di variazione.\\
+Infine si seleziona il modello di sorgente. Se si decide di approssimare la sorgente come puntiforme (SSPS), essa rappresenta una dislocazione istantanea della roccia sul piano di faglia. In alternativa è possibile selezionare un modello di sorgente semi estesa (STSPS) già implementato, oppure prepararne di nuovi ad hoc nel pannello Sources, specificandone poi il tipo di rottura (unilaterale o bilaterale), la direttività di propagazione della rottura sul piano di faglia se si osserva il fenomeno dal sito d'interesse, e il numero di realizzazioni con cui si vuole simulare tale evento.
+\clearpage
 
 \section{Simulazione di eventi di scenario}
 \subsection{Simulazione del terremoto a Ischia: Faglia di Casamicciola}
