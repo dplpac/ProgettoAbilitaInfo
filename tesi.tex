@@ -99,7 +99,7 @@ In questo modo sarà generata una banca dati per un insieme di terremoti di scen
 \clearpage
 
 \subsection{Definizione del modello strutturale}
-XeRiS utilizza la teoria della somma modale (Panza, 1985; Florsch et al., 1991) per il calcolo dei sismogrammi sintetici quando la distanza tra il sito d' interesse, cioè dove sarà valutato l'input sismico, e la sorgente del segnale è maggiore della profondità ipocentrale. Ciò accade nella maggior parte dei casi, mentre se tale distanza è minore interviene il metodo numerico DWN (Discrete Wave Number Technique) (Pavlov, 2009). La tecnica modale permette di ottenere dei sismogrammi accurati in maniera molto efficiente dal punto di vista computazionale, prendendo in considerazione anche l'attenuazione anelastica per la propagazione del segnale. Per poter applicare la teoria della somma modale, è necessario definire un modello di semispazio stratificato lateralmente omogeneo (1D), che esprime le caratteristiche medie della porzione di litosfera considerata, di cui XeRiS dovrà calcolare i modi di oscillazione per le onde di Rayleigh (campo P-SV) e di Love (campo SH). Ciascuno strato è caratterizzato dalle seguenti quantità (Fig.2.2): spessore, densità ($\rho$), velocità onde P e S (Vp e Vs) ed i fattori di qualità (inversamente proporzionali all'attenuazione) delle onde Vp e Vs, rispettivamente Qp e Qs. Per convenzione fisica, alla struttura deve essere garantita una profondità di 100 km o 1000 km, per calcoli rispettivamente su scala locale e regionale. XeRiS approssima la porzione litosferica senza prendere in considerazione la curvatura della superficie terrestre.
+XeRiS utilizza la teoria della somma modale (Panza, 1985; Florsch et al., 1991) per il calcolo dei sismogrammi sintetici quando la distanza tra il sito d' interesse, cioè dove sarà valutato l'input sismico, e la sorgente del segnale è maggiore della profondità ipocentrale. Ciò accade nella maggior parte dei casi, mentre se tale distanza è minore interviene il metodo numerico DWN (Discrete Wave Number Technique) (Pavlov, 2009). La tecnica modale permette di ottenere dei sismogrammi accurati in maniera molto efficiente dal punto di vista computazionale, prendendo in considerazione anche l'attenuazione anelastica per la propagazione del segnale. Per poter applicare la teoria della somma modale, è necessario definire un modello di semispazio stratificato lateralmente omogeneo (1D), che esprime le caratteristiche medie della porzione di litosfera considerata, di cui XeRiS dovrà calcolare i modi di oscillazione per le onde di Rayleigh (campo P-SV) e di Love (campo SH). Ciascuno strato è caratterizzato dalle seguenti quantità (Fig.2.2): spessore, densità ($\rho$), velocità onde P e S (Vp e Vs) ed i fattori di qualità (inversamente proporzionali all'attenuazione) delle onde Vp e Vs, rispettivamente Qp e Qs. Per convenzione fisica, alla struttura deve essere garantita una profondità di \SI{100}{\kilo\metre} o \SI{1000}{\kilo\metre}, per calcoli rispettivamente su scala locale e regionale. XeRiS approssima la porzione litosferica senza prendere in considerazione la curvatura della superficie terrestre.
 
 \begin{figure}[htbp]
  \centering
@@ -144,9 +144,9 @@ I parametri utilizzati nella simulazione dell'evento sismico con sorgente ad Isc
 I parametri che descrivono il meccanismo focale sono:
 \begin{itemize}
 \item  Fault strike: è l'angolo tra il nord magnetico indicato dall'ago della bussola e la linea di direzione della faglia, tale angolo si misura in senso
-orario da 0 a 360 gradi.
-\item  Fault dip: indica l'angolo tra la faglia e il piano orizzontale, da 0 a 90 gradi.
-\item Fault rake: è la direzione del movimento dell' hanging wall durante il fenomeno di rottura, misurato rispetto il piano di faglia. Si misura relativamente al fault strike e assume valori da 0 a 360 gradi.
+orario da \ang{0} a \ang{360}.
+\item  Fault dip: indica l'angolo tra la faglia e il piano orizzontale, da \ang{0} a \ang{90}.
+\item Fault rake: è la direzione del movimento dell' hanging wall durante il fenomeno di rottura, misurato rispetto il piano di faglia. Si misura relativamente al fault strike e assume valori da \ang{0} a \ang{360}.
 \end{itemize}
 %
 Il processo di rottura viene considerato un fenomeno stocastico caratterizzato dal suo punto di nucleazione, dalla velocità di propagazione della frattura e da una specifica mappa di scorrimento della roccia sul piano di faglia (Fig.2.6).\\
@@ -170,18 +170,18 @@ Per tenere in considerazione anche un eventuale effetto analogo a quello Doppler
 \end{figure}
 \clearpage
 
-\subsection{Modellazione del moto del suolo generato da sorgenti sismicheestese}
+\subsection{Modellazione del moto del suolo generato da sorgenti sismiche estese}
 Il segnale sismico generato da un modello di sorgente sismica estesa, si ottiene dalla combinazione dei segnali emessi da un insieme di sottosorgenti puntiformi, localizzate nel rettangolo che approssima la faglia.\\
-Per studiare eventi sismici su scala locale, in altre parole per simulazioni in cui tra sorgente e ricevitore intercorre una distanza dell'ordine delle decine di chilometri, è necessario definire il modello strutturale fino a una profondità di un centinaio di chilometri ed è necessario impostare la frequenza di cut off a 10 Hz, poiché sulle brevi distanze il segnale sismico è dominato dalle alte frequenze.\\
+Per studiare eventi sismici su scala locale, in altre parole per simulazioni in cui tra sorgente e ricevitore intercorre una distanza dell'ordine delle decine di chilometri, è necessario definire il modello strutturale fino a una profondità di un centinaio di chilometri ed è necessario impostare la frequenza di cut off a \SI{10}{\hertz}, poiché sulle brevi distanze il segnale sismico è dominato dalle alte frequenze.\\
 All'aumentare delle distanze i segnali ad alta frequenza diventano sempre meno rilevanti, poiché intervengono fattori che determinano il decadimento della loro ampiezza d'onda.\\
 Tra le principali cause dello smorzamento ci sono:\\
 
 \begin{itemize}
 \item  L'anelasticità del mezzo, che incide maggiormente su segnali ad alta frequenza che compiono più cicli.
-\item Lo sparpagliamento geometrico, il fronte d'onda si amplia dunque le onde sferiche (onde di corpo) e cilindriche (onde di superficie) decadono in ampiezza rispettivamente come 1/r e 1/sqrt(r).
+\item Lo sparpagliamento geometrico, il fronte d'onda si amplia dunque le onde sferiche (onde di corpo) e cilindriche (onde di superficie) decadono in ampiezza rispettivamente come $\frac{1}{r}$ e $\frac{1}{\sqrt{r}}$.
 \end{itemize}
 %
-Per scenari regionali, in cui le distanze sono dell'ordine anche delle centinaia di chilometri, si fissa la frequenza di cut off dell'input sismico a 1 Hz (poiché nel segnale sismico dominano le basse frequenze), infatti sulle lunghe distanze i segnali ad alta frequenza sono, relativamente, molto attenuati e in prima approssimazione il loro contributo può essere trascurato.
+Per scenari regionali, in cui le distanze sono dell'ordine anche delle centinaia di chilometri, si fissa la frequenza di cut off dell'input sismico a \SI{1}{\hertz} (poiché nel segnale sismico dominano le basse frequenze), infatti sulle lunghe distanze i segnali ad alta frequenza sono, relativamente, molto attenuati e in prima approssimazione il loro contributo può essere trascurato.
 \clearpage
 
 \subsection{Parametri di scuotimento del suolo}
@@ -216,6 +216,7 @@ Realizzando un tale grafico su XeRiS, appariranno in tabella solo le sorgenti ch
  \caption{Esempio di grafico MCSI per una singola sorgente, in grigio l'area tra il 50esimo e il 95esimo percentile.}
  \label{fig:MCSI}
 \end{figure}
+\clearpage
 
 \subsection{Test parametrici}
 XeRiS offre la possibilità di effettuare dei rapidi test parametrici: questo tipo di studio permette di analizzare come variano i valori di scuotimento del suolo, in funzione della variazione di un parametro libero scelto, caratterizzate la sorgente sismica.\\
