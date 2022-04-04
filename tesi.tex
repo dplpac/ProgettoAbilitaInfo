@@ -24,6 +24,7 @@
 \textwidth16cm\textheight24cm\topmargin0mm\headheight0mm\headsep6mm\oddsidemargin0mm\evensidemargin0mm
 
 \usepackage{siunitx}
+\usepackage{cite}
 
 
 
@@ -70,36 +71,38 @@ Al fine di prevedere possibili scenari sismici può essere condivisibile l'idea 
 realistici, basati su dati debitamente validati, misurati e/o stimati, caratterizzanti le sorgenti sismiche, i processi cinematici di rottura e gli effetti di sito.\\
 
 In questo lavoro di tesi sono stati modellizzati eventi di scenari sismici ad Ischia, in corrispondenza della stazione sismica IOCA di Casamicciola, generati da sorgenti sismogeniche con caratteristiche tettoniche e ubicazioni geografiche differenti.\\
-Gli eventi di scenario sono stati simulati utilizzando l'applicazione web XeRiS (Vaccari 2016), mentre i dati per la caratterizzazione delle sorgenti sismiche
-sono stati tratti dal Database of Individual Seismogenic Sources (DISS Working Group, 2018).\\
+Gli eventi di scenario sono stati simulati utilizzando l'applicazione web XeRiS  ~\nocite{Vaccari2016}(Vaccari 2016), mentre i dati per la caratterizzazione delle sorgenti sismiche sono stati tratti dal Database of Individual Seismogenic Sources~\nocite{DISS}(DISS Working Group, 2018).\\
 Sono state prese in considerazione sei sorgenti sismiche: una situata sulla faglia di Casamicciola nella parte settentrionale dell'isola, le altre su alcune faglie appenniniche presenti nell'Italia meridionale, a una distanza di circa cento chilometri dal sito scelto.\\
 Per quanto riguarda l'attribuzione delle caratteristiche geo-sismologiche utilizzate nella simulazione in cui la sorgente è posizionata sulla faglia di
 Casamicciola, si è deciso di utilizzare quelle concernenti il terremoto di Casamicciola del 21 agosto 2017 (M=4), rilevate alla stazione sismica IOCA e
 stimate da sismologi e geofisici. Tale decisione consegue dal fatto che è necessario mantenere sotto controllo il grado di consistenza tra le previsioni
 ottenute e gli eventi sismici realmente accaduti. Non si avrà la pretesa di ottenere come risultato delle simulazioni dei livelli di scuotimento del suolo coincidenti a quelli effettivamente rilevati, ma una stima ragionevole di quanto ci si può attendere in futuro per eventi simili.\\
-Si è deciso di simulare questo terremoto specifico poiché presenta delle caratteristiche particolari (e.g. De Natale, 2018), che possono essere approfondite al fine di dare un contributo alla stesura di nuove mappe di pericolosità per l'Isola d'Ischia più realistiche rispetto a quelle adottate dalla normativa nazionale attuale.\\
+Si è deciso di simulare questo terremoto specifico poiché presenta delle caratteristiche particolari~\nocite{DeNatale2018}(e.g. De Natale, 2018), che possono essere approfondite al fine di dare un contributo alla stesura di nuove mappe di pericolosità per l'Isola d'Ischia più realistiche rispetto a quelle adottate dalla normativa nazionale attuale.\\
 Il lavoro svolto è costituito di tre parti: nella prima sono presentate le funzionalità utilizzate dell'applicazione web XeRiS, e riportati i dati geosismologici relativi alla sorgete sismica di Casamicciola. Nella seconda parte sono presentati i risultati della simulazione con sorgente sull'isola, tabulate le faglie appenniniche e presentati i relativi scenari di scuotimento ad Ischia. Nella terza e ultima parte sono confrontati i diversi scenari di scuotimento simulati.
 
 \section{Presentazione della Web App XeRiS}
 
-XeRiS è un'applicazione web (in inglese Web App) (Vaccari, 2016), che permette la valutazione neo-deterministica della pericolosità sismica (Panza et al., 2001, Panza et al., 2012) mediante un'intuitiva interfaccia utente, nascondendo all'utente finale le complessità insite nel motore di calcolo.\\
+XeRiS è un'applicazione web (in inglese Web App) ~\nocite{Vaccari2016}(Vaccari, 2016), che permette la valutazione neo-deterministica della pericolosità sismica ~\nocite{Panza2001} ~\nocite{Panza2012} (Panza et al., 2001, Panza et al., 2012) mediante un'intuitiva interfaccia utente, nascondendo all'utente finale le complessità insite nel motore di calcolo.\\
 Attraverso la simulazione di eventi sismici e il calcolo di scenari di scuotimento realistici, valutati in un singolo sito d'interesse o in un'area attorno all'epicentro, si possono calcolare i parametri di scuotimento del suolo, come ad esempio la Peak Ground Acceleration (PGA), tipicamente adottata per la stima della pericolosità sismica. Ma XeRiS genera anche le serie temporali, in spostamento, velocità ed accelerazione, che possono essere utilizzate dagli ingegneri come input sismico per la progettazione di strutture resistenti al sisma.\\
-Con valutazione neo-deterministica della pericolosità, si intende che per la costruzione degli scenari di scuotimento sismico, si tengono in considerazione il modello della sorgente, le modalità di propagazione del segnale e gli effetti di sito, rispettando le leggi fisiche che descrivono la generazione e la propagazione delle onde sismiche.
+Con valutazione neo-deterministica della pericolosità, si intende che per la costruzione degli scenari di scuotimento sismico, si tengono in considerazione il modello della sorgente, le modalità di propagazione del segnale e gli effetti di sito, rispettando le leggi fisiche che descrivono la generazione e la propagazione delle onde sismiche.\\
+
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=.5\linewidth]{Img/XerisLogIn.png}
  \caption{Login XeRiS}
  \label{fig:Login XeRiS2}
 \end{figure}
+
+~\nocite{XeRiS}
 Inizialmente XeRiS richiede la definizione di un modello strutturale stratificato per la porzione di litosfera, nella quale noi collocheremo la faglia, in cui ha origine il processo di rottura e da cui si propagheranno i fronti d'onda del sisma. E' possibile selezionarne uno già implementato oppure utilizzarne di nuovi creati ad hoc.\\
-Successivamente, si modellizza la sorgente sismica attribuendone le caratteristiche geo-sismologiche, nel nostro caso quelle disponibili nel Database of Individual Seismogenic Sources (DISS Working Group, 2018).\\
-Per rappresentare al meglio la fisica del problema, la sorgente sarà considerata estesa, e dunque non trattata come un punto materiale posizionato in corrispondenza dell'ipocentro del terremoto, bensì approssimata ad una superficie rettangolare di dimensioni appropriate (e.g. Wells and Coppersmith, 1994), contenente al suo interno delle sotto-sorgenti che potranno essere considerate puntiformi.\\
+Successivamente, si modellizza la sorgente sismica attribuendone le caratteristiche geo-sismologiche, nel nostro caso quelle disponibili nel Database of Individual Seismogenic Sources~\nocite{DISS}(DISS Working Group, 2018).\\
+Per rappresentare al meglio la fisica del problema, la sorgente sarà considerata estesa, e dunque non trattata come un punto materiale posizionato in corrispondenza dell'ipocentro del terremoto, bensì approssimata ad una superficie rettangolare di dimensioni appropriate~\nocite{WellsAndCoppersmith}(e.g. Wells and Coppersmith, 1994), contenente al suo interno delle sotto-sorgenti che potranno essere considerate puntiformi.\\
 Dopo aver scelto il sito d'interesse, nel caso in esame le coordinate della stazione sismica IOCA di Casamicciola sull'Isola d'Ischia, avrà luogo il calcolo dei segnali sismici che potranno essere utilizzati come input sismico.\\
 In questo modo sarà generata una banca dati per un insieme di terremoti di scenario con caratteristiche tettoniche e ubicazioni geografiche differenti, utile per confrontare gli effetti ad Ischia dei diversi terremoti e quindi anche al fine di valutare quale evento sismico possa determinare una maggior pericolosità.
 \clearpage
 
 \subsection{Definizione del modello strutturale}
-XeRiS utilizza la teoria della somma modale (Panza, 1985; Florsch et al., 1991) per il calcolo dei sismogrammi sintetici quando la distanza tra il sito d' interesse, cioè dove sarà valutato l'input sismico, e la sorgente del segnale è maggiore della profondità ipocentrale. Ciò accade nella maggior parte dei casi, mentre se tale distanza è minore interviene il metodo numerico DWN (Discrete Wave Number Technique) (Pavlov, 2009). La tecnica modale permette di ottenere dei sismogrammi accurati in maniera molto efficiente dal punto di vista computazionale, prendendo in considerazione anche l'attenuazione anelastica per la propagazione del segnale. Per poter applicare la teoria della somma modale, è necessario definire un modello di semispazio stratificato lateralmente omogeneo (1D), che esprime le caratteristiche medie della porzione di litosfera considerata, di cui XeRiS dovrà calcolare i modi di oscillazione per le onde di Rayleigh (campo P-SV) e di Love (campo SH). Ciascuno strato è caratterizzato dalle seguenti quantità (Fig.2.2): spessore, densità ($\rho$), velocità onde P e S (Vp e Vs) ed i fattori di qualità (inversamente proporzionali all'attenuazione) delle onde Vp e Vs, rispettivamente Qp e Qs. Per convenzione fisica, alla struttura deve essere garantita una profondità di \SI{100}{\kilo\metre} o \SI{1000}{\kilo\metre}, per calcoli rispettivamente su scala locale e regionale. XeRiS approssima la porzione litosferica senza prendere in considerazione la curvatura della superficie terrestre.
+XeRiS utilizza la teoria della somma modale ~\nocite{Panza1985} ~\nocite{Florsch} (Panza, 1985; Florsch et al., 1991) per il calcolo dei sismogrammi sintetici quando la distanza tra il sito d' interesse, cioè dove sarà valutato l'input sismico, e la sorgente del segnale è maggiore della profondità ipocentrale. Ciò accade nella maggior parte dei casi, mentre se tale distanza è minore interviene il metodo numerico DWN (Discrete Wave Number Technique)~\nocite{Pavlov2009}(Pavlov, 2009). La tecnica modale permette di ottenere dei sismogrammi accurati in maniera molto efficiente dal punto di vista computazionale, prendendo in considerazione anche l'attenuazione anelastica per la propagazione del segnale. Per poter applicare la teoria della somma modale, è necessario definire un modello di semispazio stratificato lateralmente omogeneo (1D), che esprime le caratteristiche medie della porzione di litosfera considerata, di cui XeRiS dovrà calcolare i modi di oscillazione per le onde di Rayleigh (campo P-SV) e di Love (campo SH). Ciascuno strato è caratterizzato dalle seguenti quantità (Fig.2.2): spessore, densità ($\rho$), velocità onde P e S (Vp e Vs) ed i fattori di qualità (inversamente proporzionali all'attenuazione) delle onde Vp e Vs, rispettivamente Qp e Qs. Per convenzione fisica, alla struttura deve essere garantita una profondità di \SI{100}{\kilo\metre} o \SI{1000}{\kilo\metre}, per calcoli rispettivamente su scala locale e regionale. XeRiS approssima la porzione litosferica senza prendere in considerazione la curvatura della superficie terrestre.
 
 \begin{figure}[htbp]
  \centering
@@ -223,7 +226,7 @@ XeRiS offre la possibilità di effettuare dei rapidi test parametrici: questo ti
 Il test consiste nel fissare i parametri che caratterizzano la sorgente lasciandone variare solamente uno, entro un intervallo predefinito e con un passo scelto a piacere.\\
 Per ogni valore che assume la variabile libera, saranno elaborati dei sismogrammi sintetici, che verranno poi utilizzati come input sismico, per ottenere il grafico dell'accelerazione radiale, trasversale e verticale del moto del suolo in funzione del parametro libero. L'accelerazione radiale e trasversale sono le componenti vettoriali dell'accelerazione orizzontale del moto del suolo.\\
 Occorre specificare che in questa funzionalità di XeRiS, la faglia non è considerata estesa, ma viene approssimata ad una sorgente puntiforme opportunamente scalata nello spazio (SSPS - Size Scaled Point Source) o semi estesa,
-ovvero scalata nello spazio e nel tempo (STSPS - Size and Time Scaled Point Source) (Panza et al., 2012), a discrezione dell'utente.\\
+ovvero scalata nello spazio e nel tempo (STSPS - Size and Time Scaled Point Source)~\nocite{Panza2012} (Panza et al., 2012), a discrezione dell'utente.\\
 Per prima cosa è necessario definire il modello strutturale in cui noi posizioneremo la faglia e dove si propagheranno le onde sismiche.\\
 Successivamente, si inseriscono i parametri fissi, si seleziona il parametro libero, si specifica il range di variabilità e lo step di variazione.\\
 Infine si seleziona il modello di sorgente. Se si decide di approssimare la sorgente come puntiforme (SSPS), essa rappresenta una dislocazione istantanea della roccia sul piano di faglia. In alternativa è possibile selezionare un modello di sorgente semi estesa (STSPS) già implementato, oppure prepararne di nuovi ad hoc nel pannello Sources, specificandone poi il tipo di rottura (unilaterale o bilaterale), la direttività di propagazione della rottura sul piano di faglia se si osserva il fenomeno dal sito d'interesse, e il numero di realizzazioni con cui si vuole simulare tale evento.
@@ -231,9 +234,14 @@ Infine si seleziona il modello di sorgente. Se si decide di approssimare la sorg
 
 \section{Simulazione di eventi di scenario}
 \subsection{Simulazione del terremoto a Ischia: Faglia di Casamicciola}
+~\nocite{DeNovellis2018}
+~\nocite{Strollo2015}
 \subsection{ Simulazione di eventi di scenario ad Ischia per sorgenti appenniniche}
+~\nocite{Costanzo2017}
 \subsection{Confronto tra alcune simulazioni con sorgente appenninica}
 
 \section*{Conclusioni}\addcontentsline{toc}{section}{Conclusioni}
 
+\bibliography{references}
+\bibliographystyle{plain}
 \end{document}
